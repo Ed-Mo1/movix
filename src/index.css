@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+.lazy-load-image-loaded {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: "Inter", sans-serif;
+  color: white;
+  --sb-size: 0px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+}
+
+.playbtn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  svg {
+    width: 80px;
+  }
+  .triangle {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 480;
+    stroke: white;
+    transform: translateY(0);
+    transition: all 0.7s ease-in-out;
+  }
+  .circle {
+    stroke: white;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 1300;
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover {
+    .text {
+      color: #da2f68;
+    }
+    .triangle {
+      stroke-dashoffset: 0;
+      opacity: 1;
+      stroke: #da2f68;
+      animation: trailorPlay 0.7s ease-in-out;
+    }
+    .circle {
+      stroke-dashoffset: 0;
+      stroke: #da2f68;
+    }
+  }
+}
+.play_icon .CircularProgressbar .CircularProgressbar-trail {
+  stroke: transparent !important;
+}
+
+@media screen and (max-width: 768px) {
+  .playbtn {
+    svg {
+      width: 60px;
+    }
+  }
+}
+@layer utilities {
+  .gener {
+    @apply bg-pink text-white text-xs sm:text-sm px-[1px] rounded;
+  }
+
+  .info_name {
+    @apply font-bold me-2;
+  }
+
+  .info_value {
+    @apply opacity-[0.5];
+  }
+  .backdrop_path {
+    @apply w-full h-full object-center object-cover;
+  }
+}
