@@ -151,10 +151,10 @@ const Explore = () => {
               );
             }
           })}
-          {lists.length === 0 && (
+          {!isFetching && lists.length === 0 && (
             <div className="text-white col-span-6 justify-center">
               <div className="text-center w-fit mx-auto">
-                <img src={noResults} className="max-w-[500px]" />
+                <img src={noResults} className="max-w-[500px] w-full" />
                 <h3>No movies found</h3>
               </div>
             </div>

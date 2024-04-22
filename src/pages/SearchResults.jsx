@@ -56,7 +56,7 @@ const SearchResults = () => {
               );
             }
           })}
-          {!isLoading && lists.length === 0 && (
+          {!isFetching && lists.length === 0 && (
             <div className="col-span-6 flex flex-col items-center">
               <img
                 src={noResults}
