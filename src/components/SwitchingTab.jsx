@@ -13,7 +13,7 @@ const SwitchingTab = ({ activeTab, setActiveTab, tabs }) => {
               : "text-black"
           }`}
         >
-          {tab === "Movie" ? "Movies" : 'TV Shows'}
+          {tab === "Movie" ? "Movies" : tab === "Tv" ? 'TV Shows' : tab}
         </button>
       ))}
     </div>
