@@ -5,7 +5,7 @@ import Carousel from "../../components/Carousel";
 
 const TopRated = () => {
   const [activeTab, setActiveTab] = useState("movie");
-  const { data: topRated } = useGetMoviesQuery({
+  const { data: topRated ,isLoading } = useGetMoviesQuery({
     url: `/${activeTab}/top_rated`,
   });
   return (
@@ -19,7 +19,7 @@ const TopRated = () => {
         />
       </div>
       <div className="mt-10">
-        <Carousel data={topRated?.results} activeTab={activeTab} />
+        <Carousel data={topRated?.results} isLoading={isLoading}  activeTab={activeTab} />
       </div>
     </section>
   );

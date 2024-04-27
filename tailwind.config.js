@@ -2,6 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    keyframes: {
+      cardSkeleton: {
+        "0%": { transform: "translateX(0)" },
+        "100%": { transform: "translateX(100%)" },
+      },
+    },
     container: {
       center: true,
       padding: {
@@ -24,11 +30,10 @@ export default {
         blackLight: "#173d77",
         pink: "#da2f68",
         orange: "#f89e00",
-       
       },
-      backgroundImage:{
+      backgroundImage: {
         gradient: "linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%)",
-      }
+      },
     },
     plugins: [],
   },

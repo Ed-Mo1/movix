@@ -131,7 +131,7 @@ const Header = () => {
                 className="bg-transparent py-5 text-black flex-grow"
               />
               <button
-                onClick={() => setShowSearch(false)}
+                onClick={() => setQuery('')}
                 className="text-2xl "
               >
                 <MdClose />

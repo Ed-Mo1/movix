@@ -5,7 +5,7 @@ import Carousel from "../../components/Carousel";
 
 const Trending = () => {
   const [activeTab, setActiveTab] = useState("day");
-  const { data: trending } = useGetMoviesQuery({
+  const { data: trending ,isLoading} = useGetMoviesQuery({
     url: `/trending/all/${activeTab}`,
   });
   
@@ -20,7 +20,7 @@ const Trending = () => {
         />
       </div>
       <div className="mt-10">
-        <Carousel data={trending?.results} activeTab={activeTab} />
+        <Carousel isLoading={isLoading} data={trending?.results} activeTab={activeTab} />
       </div>
     </section>
   );

@@ -83,11 +83,15 @@ const Explore = () => {
     (node) => {
       if (isLoading || isFetching) return;
       if (observer.current) observer.current.disconnect();
-      observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          if (page < data.total_pages) setPage((prevPage) => prevPage + 1);
-        }
-      });
+      observer.current = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            if (page < data.total_pages) setPage((prevPage) => prevPage + 1);
+          }
+        },
+        { rootMargin: "100px" }
+      );
+
       if (node) observer.current.observe(node);
     },
     [isLoading, isFetching, data, page]
